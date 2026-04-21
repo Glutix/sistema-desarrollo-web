@@ -10,6 +10,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema dbsistema
 -- -----------------------------------------------------
+DROP DATABASE IF EXISTS `dbsistema`;
 
 -- -----------------------------------------------------
 -- Schema dbsistema
@@ -37,6 +38,11 @@ CREATE TABLE IF NOT EXISTS `dbsistema`.`persona` (
   `idpersona` INT NOT NULL AUTO_INCREMENT,
   `tipo_persona` VARCHAR(20) NOT NULL,
   `nombre` VARCHAR(100) NOT NULL,
+  `tipo_documento` VARCHAR(20),
+  `num_documento` VARCHAR(20),
+  `direccion` VARCHAR(70),
+  `telefono` VARCHAR(20),
+  `email` VARCHAR(50),
   PRIMARY KEY (`idpersona`))
 ENGINE = InnoDB;
 
@@ -78,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `dbsistema`.`usuario` (
   `cargo` VARCHAR(20) NULL,
   `login` VARCHAR(20) NOT NULL,
   `clave` VARCHAR(64) NOT NULL,
-  `condicion` TINYINT NOT NULL,
+  `condicion` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`idusuario`),
   UNIQUE INDEX `login_UNIQUE` (`login` ASC))
 ENGINE = InnoDB;
@@ -178,16 +184,15 @@ CREATE TABLE IF NOT EXISTS `dbsistema`.`detalle_venta` (
   `idarticulo` INT NOT NULL,
   `cantidad` INT NOT NULL,
   `precio_venta` DECIMAL(11,2) NOT NULL,
-  `precio_venta` DECIMAL(11,2) NOT NULL,
   PRIMARY KEY (`iddetalle_venta`),
-  INDEX `fk_detalle_articulo_idx` (`idarticulo` ASC),
+  INDEX `fk_detalle_venta_articulo_idx` (`idarticulo` ASC),
   INDEX `fk_detalle_venta_venta_idx` (`idventa` ASC),
   CONSTRAINT `fk_detalle_venta_venta`
     FOREIGN KEY (`idventa`)
     REFERENCES `dbsistema`.`venta` (`idiventa`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_detalle_articulo0`
+  CONSTRAINT `fk_detalle_venta_articulo`
     FOREIGN KEY (`idarticulo`)
     REFERENCES `dbsistema`.`articulo` (`idarticulo`)
     ON DELETE NO ACTION
