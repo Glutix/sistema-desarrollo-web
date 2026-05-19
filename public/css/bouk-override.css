@@ -1,0 +1,337 @@
+/**
+ * BOUK OVERRIDE - Fuerza estilos sobre AdminLTE
+ * ================================================
+ * Este archivo contiene reglas CSS con MÁXIMA especificidad
+ * para garantizar que los estilos BOUK sobrescriban AdminLTE
+ * 
+ * IMPORTANTE: Este archivo debe cargarse DESPUÉS de bouk.css
+ * 
+ * Fecha: 2025-10-13
+ */
+
+/* ========================================
+   PANEL-BODY TABLE-RESPONSIVE
+   Fondo gris oscuro #1A1A1A
+   ======================================== */
+
+/* Máxima especificidad - Sobrescribe CUALQUIER skin */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .panel-body.table-responsive,
+body.bouk-theme div.panel-body.table-responsive,
+body.skin-blue-light div.panel-body.table-responsive,
+.bouk-theme .panel-body.table-responsive,
+div.panel-body.table-responsive {
+  background-color: #1A1A1A !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 6px !important;
+  padding: 15px !important;
+}
+
+/* Panel-body general */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .panel-body,
+body.bouk-theme div.panel-body,
+.bouk-theme .panel-body {
+  background-color: #1A1A1A !important;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+/* ========================================
+   SIDEBAR - FONDOS OSCUROS
+   ======================================== */
+
+/* Wrapper, sidebar y contenedor con fondo casi negro */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .wrapper,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .main-sidebar,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme aside.main-sidebar,
+body.skin-blue-light.bouk-theme .wrapper,
+body.skin-blue-light.bouk-theme .main-sidebar,
+body.skin-blue-light.bouk-theme .left-side {
+  background-color: #0A0A0A !important;
+}
+
+/* Headers del sidebar */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu > li.header,
+body.skin-blue-light.bouk-theme .sidebar-menu > li.header {
+  color: #848484 !important;
+  background: #0A0A0A !important;
+}
+
+/* Links del sidebar */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu > li > a,
+body.skin-blue-light.bouk-theme .sidebar-menu > li > a {
+  color: #CCCCCC !important;
+  border-left: 3px solid transparent;
+}
+
+/* Hover y activos */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu > li:hover > a,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu > li.active > a,
+body.skin-blue-light.bouk-theme .sidebar-menu > li:hover > a,
+body.skin-blue-light.bouk-theme .sidebar-menu > li.active > a {
+  background-color: #111111 !important;
+  color: #FFFFFF !important;
+}
+
+/* Borde rojo en items activos */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu > li.active,
+body.skin-blue-light.bouk-theme .sidebar-menu > li.active {
+  border-left-color: #7b112c !important;
+}
+
+/* ========================================
+   TREEVIEW - FONDOS OSCUROS CON IDENTIFICACIÓN
+   ======================================== */
+
+/* TreeView activo - Fondo casi negro #050505 */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu .treeview.active,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme ul.sidebar-menu li.treeview.active,
+body.skin-blue-light.bouk-theme .sidebar-menu .treeview.active,
+.bouk-theme .sidebar-menu .treeview.active {
+  background-color: #050505 !important;
+  border-left: 3px solid #7b112c !important;
+}
+
+/* Link principal del TreeView activo */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu .treeview.active > a,
+body.skin-blue-light.bouk-theme .sidebar-menu .treeview.active > a,
+.bouk-theme .sidebar-menu .treeview.active > a {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+/* Submenú del TreeView - Fondo gris muy oscuro #080808 */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu > li > .treeview-menu,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu .treeview-menu,
+body.skin-blue-light.bouk-theme .sidebar-menu > li > .treeview-menu,
+body.skin-blue-light.bouk-theme .sidebar-menu .treeview-menu,
+.bouk-theme .sidebar-menu .treeview-menu {
+  background-color: #080808 !important;
+  margin: 0 1px;
+  padding: 5px 0 !important;
+}
+
+/* Links dentro del submenú */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu .treeview-menu > li > a,
+body.skin-blue-light.bouk-theme .sidebar-menu .treeview-menu > li > a,
+.bouk-theme .sidebar-menu .treeview-menu > li > a {
+  color: #BBBBBB !important;
+  padding-left: 25px;
+}
+
+/* Links activos del submenú */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu .treeview-menu > li.active > a,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu .treeview-menu > li > a:hover,
+body.skin-blue-light.bouk-theme .sidebar-menu .treeview-menu > li.active > a,
+body.skin-blue-light.bouk-theme .sidebar-menu .treeview-menu > li > a:hover,
+.bouk-theme .sidebar-menu .treeview-menu > li.active > a,
+.bouk-theme .sidebar-menu .treeview-menu > li > a:hover {
+  background-color: #111111 !important;
+  color: #FFFFFF !important;
+  border-left: 2px solid #7b112c !important;
+}
+
+/* Font weight en activos */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar-menu .treeview-menu > li.active > a,
+body.skin-blue-light.bouk-theme .sidebar-menu .treeview-menu > li.active > a,
+.bouk-theme .sidebar-menu .treeview-menu > li.active > a {
+  font-weight: 600 !important;
+}
+
+/* Todos los links del sidebar */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar a,
+body.skin-blue-light.bouk-theme .sidebar a,
+.bouk-theme .sidebar a {
+  color: #CCCCCC !important;
+}
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .sidebar a:hover,
+body.skin-blue-light.bouk-theme .sidebar a:hover,
+.bouk-theme .sidebar a:hover {
+  text-decoration: none;
+  color: #FFFFFF !important;
+}
+
+/* ========================================
+   CONTENT WRAPPER - FONDO NEGRO
+   ======================================== */
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .content-wrapper,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .right-side,
+body.skin-blue-light.bouk-theme .content-wrapper,
+body.skin-blue-light.bouk-theme .right-side {
+  background-color: #000000 !important;
+  border-left: 1px solid #1f1f1f !important;
+}
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .main-footer,
+body.skin-blue-light.bouk-theme .main-footer {
+  border-left: 1px solid #1f1f1f !important;
+}
+
+/* ========================================
+   USER PANEL
+   ======================================== */
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .user-panel > .info,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .user-panel > .info > a,
+body.skin-blue-light.bouk-theme .user-panel > .info,
+body.skin-blue-light.bouk-theme .user-panel > .info > a {
+  color: #FFFFFF !important;
+}
+
+/* ========================================
+   BOX - CONTENEDORES
+   ======================================== */
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .box,
+body.bouk-theme .box,
+.bouk-theme .box {
+  background: #0B0B0B !important;
+  border: 1px solid #1a1a1a !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   DATATABLES
+   ======================================== */
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme table.dataTable,
+body.bouk-theme table.dataTable,
+.bouk-theme table.dataTable {
+  background-color: #1A1A1A !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+/* TABLAS BOOTSTRAP NORMALES - CRÍTICO PARA tbllistado */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme table.table,
+body.bouk-theme .table,
+body.bouk-theme table.table,
+.bouk-theme .table,
+table.table {
+  background-color: #1A1A1A !important;
+  border: 1px solid #2a2a2a !important;
+  color: #EEEEEE !important;
+}
+
+/* Headers de TODAS las tablas */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme table thead th,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table thead th,
+body.bouk-theme table thead th,
+body.bouk-theme .table thead th,
+.bouk-theme table thead th,
+table thead th {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  border-bottom: 2px solid #7b112c !important;
+  font-weight: 600 !important;
+  padding: 12px 8px !important;
+}
+
+/* Body de TODAS las tablas */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme table tbody td,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table tbody td,
+body.bouk-theme table tbody td,
+body.bouk-theme .table tbody td,
+.bouk-theme table tbody td,
+table tbody td {
+  background-color: #1A1A1A !important;
+  color: #EEEEEE !important;
+  border-color: #2a2a2a !important;
+  padding: 10px 8px !important;
+}
+
+/* Filas alternadas (table-striped) */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-striped > tbody > tr:nth-of-type(odd),
+body.bouk-theme .table-striped > tbody > tr:nth-of-type(odd),
+.bouk-theme .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #1A1A1A !important;
+}
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-striped > tbody > tr:nth-of-type(even),
+body.bouk-theme .table-striped > tbody > tr:nth-of-type(even),
+.bouk-theme .table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #151515 !important;
+}
+
+/* Hover en filas */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-hover > tbody > tr:hover,
+body.bouk-theme .table-hover > tbody > tr:hover,
+.bouk-theme .table-hover > tbody > tr:hover {
+  background-color: #202020 !important;
+}
+
+/* Footer de tablas */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme table tfoot th,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table tfoot th,
+body.bouk-theme table tfoot th,
+.bouk-theme table tfoot th {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  border-top: 2px solid #7b112c !important;
+  font-weight: 600 !important;
+}
+
+/* Tablas con bordes (table-bordered) */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-bordered,
+body.bouk-theme .table-bordered,
+.bouk-theme .table-bordered {
+  border: 1px solid #2a2a2a !important;
+}
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-bordered > thead > tr > th,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-bordered > tbody > tr > th,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-bordered > tfoot > tr > th,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-bordered > thead > tr > td,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-bordered > tbody > tr > td,
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme .table-bordered > tfoot > tr > td,
+body.bouk-theme .table-bordered > thead > tr > th,
+body.bouk-theme .table-bordered > tbody > tr > th,
+body.bouk-theme .table-bordered > tfoot > tr > th,
+body.bouk-theme .table-bordered > thead > tr > td,
+body.bouk-theme .table-bordered > tbody > tr > td,
+body.bouk-theme .table-bordered > tfoot > tr > td {
+  border: 1px solid #2a2a2a !important;
+}
+
+/* DataTables específicas */
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme table.dataTable thead th,
+body.bouk-theme table.dataTable thead th,
+.bouk-theme table.dataTable thead th {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  border-bottom: 2px solid #7b112c !important;
+  font-weight: 600 !important;
+}
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme table.dataTable.stripe tbody tr:nth-child(odd),
+body.bouk-theme table.dataTable.stripe tbody tr:nth-child(odd),
+.bouk-theme table.dataTable.stripe tbody tr:nth-child(odd) {
+  background-color: #1A1A1A !important;
+}
+
+html body.hold-transition.skin-blue-light.sidebar-mini.bouk-theme table.dataTable tbody td,
+body.bouk-theme table.dataTable tbody td,
+.bouk-theme table.dataTable tbody td {
+  color: #EEEEEE !important;
+  border-color: #2a2a2a !important;
+}
+
+/* ========================================
+   VERIFICACIÓN FINAL
+   ======================================== */
+
+/* Si NADA de lo anterior funciona, estos estilos inline-level deberían aplicarse */
+[class*="panel-body"][class*="table-responsive"] {
+  background-color: #1A1A1A !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+[class*="treeview"][class*="active"] {
+  background-color: #050505 !important;
+  border-left: 3px solid #7b112c !important;
+}
+
+/* FIN DE OVERRIDES */

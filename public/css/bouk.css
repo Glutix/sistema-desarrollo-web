@@ -1,0 +1,519 @@
+/* BOUK Theme - Elegant, modern, black with wine-red accent */
+/* Updated: 2025-10-13 - Enhanced admin panel visuals with MAXIMUM specificity */
+/* CRITICAL: These styles MUST override AdminLTE's skin-blue-light */
+
+/* Base */
+body.bouk-theme {
+  background-color: #000000;
+  color: #EEEEEE;
+}
+
+/* Brand logo */
+.bouk-logo {
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.bouk-logo .b-letter {
+  color: #7b112c; /* wine red */
+}
+.bouk-logo {
+  color: #FFFFFF;
+}
+
+/* Header/Navbar */
+.bouk-theme .main-header .logo {
+  background-color: #0A0A0A !important;
+  color: #FFFFFF !important;
+  border-bottom: 1px solid #1f1f1f;
+}
+.bouk-theme .main-header .navbar {
+  background-color: #0F0F0F !important;
+  border-bottom: 1px solid #1f1f1f;
+}
+.bouk-theme .main-header .navbar .nav > li > a,
+.bouk-theme .main-header .logo .logo-lg,
+.bouk-theme .main-header .logo .logo-mini {
+  color: #FFFFFF !important;
+}
+
+/* Sidebar - Sobrescribiendo skin-blue-light */
+.bouk-theme.skin-blue-light .wrapper,
+.bouk-theme.skin-blue-light .main-sidebar,
+.bouk-theme.skin-blue-light .left-side {
+  background-color: #0A0A0A !important;
+}
+.bouk-theme .main-sidebar,
+.bouk-theme .left-side {
+  background-color: #0A0A0A !important;
+}
+.bouk-theme.skin-blue-light .sidebar-menu > li.header {
+  color: #848484 !important;
+  background: #0A0A0A !important;
+}
+.bouk-theme .sidebar-menu > li > a {
+  color: #CCCCCC;
+  transition: all 0.3s ease;
+}
+.bouk-theme.skin-blue-light .sidebar-menu > li > a {
+  color: #CCCCCC !important;
+  border-left: 3px solid transparent;
+}
+.bouk-theme .sidebar-menu > li.active > a,
+.bouk-theme .sidebar-menu > li > a:hover {
+  background-color: #111111;
+  color: #FFFFFF;
+}
+.bouk-theme.skin-blue-light .sidebar-menu > li:hover > a,
+.bouk-theme.skin-blue-light .sidebar-menu > li.active > a {
+  background-color: #111111 !important;
+  color: #FFFFFF !important;
+}
+.bouk-theme .sidebar-menu > li.active > a {
+  border-left: 3px solid #7b112c;
+}
+.bouk-theme.skin-blue-light .sidebar-menu > li.active {
+  border-left-color: #7b112c !important;
+}
+
+/* Treeview - Submenú expandido con fondo oscuro - Sobrescribiendo skin-blue-light */
+.bouk-theme .sidebar-menu .treeview.active {
+  background-color: #050505 !important;
+  border-left: 3px solid #7b112c;
+}
+.bouk-theme.skin-blue-light .sidebar-menu .treeview.active {
+  background-color: #050505 !important;
+  border-left: 3px solid #7b112c !important;
+}
+.bouk-theme .sidebar-menu .treeview.active > a {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+.bouk-theme.skin-blue-light .sidebar-menu .treeview.active > a {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+.bouk-theme .sidebar-menu .treeview-menu {
+  background-color: #080808 !important;
+  padding: 5px 0;
+}
+.bouk-theme.skin-blue-light .sidebar-menu > li > .treeview-menu {
+  background-color: #080808 !important;
+  margin: 0 1px;
+  padding: 5px 0;
+}
+.bouk-theme .sidebar-menu .treeview-menu > li > a {
+  color: #BBBBBB;
+  padding-left: 25px;
+  transition: all 0.3s ease;
+}
+.bouk-theme.skin-blue-light .sidebar-menu .treeview-menu > li > a {
+  color: #BBBBBB !important;
+  padding-left: 25px;
+}
+.bouk-theme .sidebar-menu .treeview-menu > li.active > a,
+.bouk-theme .sidebar-menu .treeview-menu > li > a:hover {
+  background-color: #111111 !important;
+  color: #FFFFFF;
+  border-left: 2px solid #7b112c;
+}
+.bouk-theme.skin-blue-light .sidebar-menu .treeview-menu > li.active > a,
+.bouk-theme.skin-blue-light .sidebar-menu .treeview-menu > li > a:hover {
+  background-color: #111111 !important;
+  color: #FFFFFF !important;
+  border-left: 2px solid #7b112c;
+}
+.bouk-theme .sidebar-menu .treeview-menu > li.active > a {
+  font-weight: 600;
+}
+.bouk-theme.skin-blue-light .sidebar-menu .treeview-menu > li.active > a {
+  font-weight: 600;
+}
+
+/* Sidebar links - Sobrescribir colores claros de skin-blue-light */
+.bouk-theme.skin-blue-light .sidebar a {
+  color: #CCCCCC !important;
+}
+.bouk-theme.skin-blue-light .sidebar a:hover {
+  text-decoration: none;
+  color: #FFFFFF !important;
+}
+
+/* Content wrapper - Sobrescribiendo skin-blue-light */
+.bouk-theme.skin-blue-light .content-wrapper,
+.bouk-theme.skin-blue-light .right-side {
+  background-color: #000000 !important;
+  border-left: 1px solid #1f1f1f !important;
+}
+.bouk-theme .content-wrapper,
+.bouk-theme .right-side {
+  background-color: #000000;
+}
+.bouk-theme.skin-blue-light .main-footer {
+  border-left: 1px solid #1f1f1f !important;
+}
+
+/* Boxes and panels */
+.bouk-theme .box {
+  background: #0B0B0B;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.bouk-theme .box .box-header {
+  border-bottom: 1px solid #1a1a1a;
+  background-color: #0D0D0D;
+  padding: 15px;
+}
+.bouk-theme .box .box-title {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Panel-body con fondo gris oscuro para mejor visibilidad */
+/* MÁXIMA PRIORIDAD: Sobrescribe cualquier skin de AdminLTE */
+body.bouk-theme .panel-body,
+body.skin-blue-light.bouk-theme .panel-body {
+  background-color: #1A1A1A !important;
+  border-radius: 6px;
+  padding: 20px;
+}
+body.bouk-theme .panel-body.table-responsive,
+body.skin-blue-light.bouk-theme .panel-body.table-responsive,
+.bouk-theme .panel-body.table-responsive,
+div.panel-body.table-responsive {
+  background-color: #1A1A1A !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+/* Small boxes */
+.bouk-theme .small-box {
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.bouk-theme .bg-aqua,
+.bouk-theme .bg-green,
+.bouk-theme .bg-yellow,
+.bouk-theme .bg-red {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+}
+.bouk-theme .small-box .inner strong {
+  color: #FFFFFF;
+}
+.bouk-theme .small-box .icon {
+  color: rgba(255,255,255,0.25);
+}
+.bouk-theme .small-box-footer {
+  background-color: transparent !important;
+  color: #7b112c !important;
+}
+
+/* Buttons */
+.bouk-theme .btn-primary,
+.bouk-theme .btn-success,
+.bouk-theme .btn-default,
+.bouk-theme .btn {
+  border-radius: 6px;
+  border: 1px solid #262626;
+  background-color: #121212;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+.bouk-theme .btn-primary,
+.bouk-theme .btn-success {
+  background-color: #7b112c;
+  border-color: #8d1632;
+}
+.bouk-theme .btn-primary:hover,
+.bouk-theme .btn-success:hover,
+.bouk-theme .btn:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(123, 17, 44, 0.4);
+}
+.bouk-theme .btn-warning {
+  background-color: #d39e00;
+  border-color: #d39e00;
+  color: #000000;
+}
+.bouk-theme .btn-warning:hover {
+  background-color: #edb100;
+  transform: translateY(-1px);
+}
+.bouk-theme .btn-danger {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+.bouk-theme .btn-danger:hover {
+  background-color: #e02a3a;
+  transform: translateY(-1px);
+}
+.bouk-theme .btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+.bouk-theme .btn-info:hover {
+  background-color: #1ab5cf;
+  transform: translateY(-1px);
+}
+
+/* Links */
+.bouk-theme a { 
+  color: #c81e45; 
+  transition: color 0.3s ease;
+}
+.bouk-theme a:hover { 
+  color: #e23559; 
+}
+
+/* Forms */
+.bouk-theme .form-control,
+.bouk-theme .input-group-addon,
+.bouk-theme .selectpicker {
+  background-color: #0E0E0E;
+  border: 1px solid #262626;
+  color: #EEEEEE;
+  transition: all 0.3s ease;
+}
+.bouk-theme .form-control:focus {
+  border-color: #7b112c;
+  box-shadow: 0 0 0 2px rgba(123,17,44,0.25);
+  background-color: #121212;
+}
+.bouk-theme label {
+  color: #DDDDDD;
+  font-weight: 500;
+}
+
+/* DataTables - Tablas con mejor contraste */
+.bouk-theme table.dataTable {
+  background-color: #1A1A1A !important;
+  border: 1px solid #2a2a2a;
+}
+
+/* Tablas Bootstrap normales - MISMO estilo que DataTables */
+.bouk-theme .table,
+.bouk-theme table.table {
+  background-color: #1A1A1A !important;
+  border: 1px solid #2a2a2a !important;
+  color: #EEEEEE !important;
+}
+
+/* Headers de tablas Bootstrap */
+.bouk-theme .table thead th,
+.bouk-theme table.table thead th {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  border-bottom: 2px solid #7b112c !important;
+  font-weight: 600;
+  padding: 12px 8px;
+}
+
+/* Body de tablas Bootstrap */
+.bouk-theme .table tbody td,
+.bouk-theme table.table tbody td {
+  background-color: #1A1A1A !important;
+  color: #EEEEEE !important;
+  border-color: #2a2a2a !important;
+  padding: 10px 8px;
+}
+
+/* Filas alternadas para tablas con table-striped */
+.bouk-theme .table-striped > tbody > tr:nth-of-type(odd),
+.bouk-theme table.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #1A1A1A !important;
+}
+
+.bouk-theme .table-striped > tbody > tr:nth-of-type(even),
+.bouk-theme table.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #151515 !important;
+}
+
+/* Hover en filas */
+.bouk-theme .table-hover > tbody > tr:hover,
+.bouk-theme table.table-hover > tbody > tr:hover {
+  background-color: #202020 !important;
+}
+
+/* Footer de tablas Bootstrap */
+.bouk-theme .table tfoot th,
+.bouk-theme table.table tfoot th {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  border-top: 2px solid #7b112c !important;
+  font-weight: 600;
+}
+
+/* Tablas con bordes */
+.bouk-theme .table-bordered,
+.bouk-theme table.table-bordered {
+  border: 1px solid #2a2a2a !important;
+}
+
+.bouk-theme .table-bordered > thead > tr > th,
+.bouk-theme .table-bordered > tbody > tr > th,
+.bouk-theme .table-bordered > tfoot > tr > th,
+.bouk-theme .table-bordered > thead > tr > td,
+.bouk-theme .table-bordered > tbody > tr > td,
+.bouk-theme .table-bordered > tfoot > tr > td {
+  border: 1px solid #2a2a2a !important;
+}
+
+/* Estilos específicos para DataTables */
+.bouk-theme table.dataTable thead th {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  border-bottom: 2px solid #7b112c !important;
+  font-weight: 600;
+  padding: 12px 8px;
+}
+.bouk-theme table.dataTable thead th:hover {
+  background-color: #111111 !important;
+}
+.bouk-theme table.dataTable.stripe tbody tr:nth-child(odd),
+.bouk-theme table.dataTable.display tbody tr:nth-child(odd) {
+  background-color: #1A1A1A !important;
+}
+.bouk-theme table.dataTable.display tbody tr:nth-child(even) {
+  background-color: #151515 !important;
+}
+.bouk-theme table.dataTable tbody tr:hover {
+  background-color: #202020 !important;
+}
+.bouk-theme table.dataTable tbody td {
+  color: #EEEEEE;
+  border-color: #2a2a2a;
+  padding: 10px 8px;
+}
+.bouk-theme table.dataTable tfoot th {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF !important;
+  border-top: 2px solid #7b112c !important;
+  font-weight: 600;
+}
+
+/* DataTables controls */
+.bouk-theme .dataTables_wrapper .dataTables_length select,
+.bouk-theme .dataTables_wrapper .dataTables_filter input {
+  background-color: #0E0E0E;
+  border: 1px solid #262626;
+  color: #EEEEEE;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.bouk-theme .dataTables_wrapper .dataTables_info {
+  color: #BBBBBB;
+}
+.bouk-theme .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #0E0E0E !important;
+  color: #EEEEEE !important;
+  border: 1px solid #262626 !important;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+.bouk-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #7b112c !important;
+  color: #FFFFFF !important;
+  border-color: #8d1632 !important;
+}
+.bouk-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #7b112c !important;
+  color: #FFFFFF !important;
+  border-color: #8d1632 !important;
+}
+
+/* Chart.js canvas background */
+.bouk-theme canvas {
+  background: #0A0A0A;
+  border-radius: 8px;
+}
+
+/* Labels/Badges */
+.bouk-theme .label.bg-red { 
+  background-color: #7b112c !important; 
+}
+.bouk-theme .label.bg-green { 
+  background-color: #1b7e5a !important; 
+}
+.bouk-theme .label {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Footer & other */
+.bouk-theme .main-footer {
+  background: #0A0A0A;
+  border-top: 1px solid #1f1f1f;
+  color: #AAAAAA;
+}
+
+/* Dropdown menus */
+.bouk-theme .dropdown-menu {
+  background-color: #111111;
+  border: 1px solid #2a2a2a;
+}
+.bouk-theme .dropdown-menu > li > a {
+  color: #EEEEEE;
+}
+.bouk-theme .dropdown-menu > li > a:hover {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+}
+
+/* Modals */
+.bouk-theme .modal-content {
+  background-color: #0D0D0D;
+  border: 1px solid #2a2a2a;
+}
+.bouk-theme .modal-header {
+  background-color: #111111;
+  border-bottom: 1px solid #2a2a2a;
+}
+.bouk-theme .modal-title {
+  color: #FFFFFF;
+}
+.bouk-theme .modal-body {
+  background-color: #0D0D0D;
+  color: #EEEEEE;
+}
+.bouk-theme .modal-footer {
+  background-color: #111111;
+  border-top: 1px solid #2a2a2a;
+}
+
+/* User panel - Sobrescribiendo skin-blue-light */
+.bouk-theme.skin-blue-light .user-panel > .info,
+.bouk-theme.skin-blue-light .user-panel > .info > a {
+  color: #FFFFFF !important;
+}
+
+/* User dropdown */
+.bouk-theme .user-header {
+  background-color: #0D0D0D !important;
+  color: #FFFFFF;
+}
+.bouk-theme .user-footer {
+  background-color: #111111 !important;
+}
+
+/* Scrollbars personalizados */
+.bouk-theme ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.bouk-theme ::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+.bouk-theme ::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 5px;
+}
+.bouk-theme ::-webkit-scrollbar-thumb:hover {
+  background: #7b112c;
+}

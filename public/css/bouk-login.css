@@ -1,0 +1,302 @@
+/**
+ * BOUK LOGIN - ESTILOS ESPECÍFICOS PARA EL LOGIN DEL PANEL ADMINISTRATIVO
+ * Diseño elegante y moderno siguiendo la estética BOUK
+ * Paleta: #000000, #0A0A0A-#1A1A1A, #7b112c
+ * Creado: 2025-10-13
+ */
+
+/* Body y layout principal */
+body.bouk-login {
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #050505 50%, #0a0a0a 75%, #000000 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Patrón de fondo sutil más oscuro */
+body.bouk-login::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 20% 20%, rgba(123, 17, 44, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(123, 17, 44, 0.03) 0%, transparent 50%), radial-gradient(circle at 40% 60%, rgba(15, 15, 15, 0.6) 0%, transparent 60%);
+  z-index: -1;
+  animation: backgroundFloat 8s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.05) rotate(1deg);
+    opacity: 1;
+  }
+}
+
+/* Contenedor de login */
+.login-page.bouk-login {
+  background: transparent;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-box {
+  width: 360px;
+  max-width: 100%;
+  position: relative;
+  z-index: 10;
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header BOUK */
+.bouk-header {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.bouk-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1);
+  margin-bottom: 10px;
+  position: relative;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1);
+  }
+  to {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 25px rgba(255,255,255,0.2), 0 0 30px rgba(123,17,44,0.3);
+  }
+}
+
+.bouk-title .b-letter {
+  color: #7b112c;
+  text-shadow: 2px 2px 8px rgba(123, 17, 44, 0.5), 0 0 15px rgba(123, 17, 44, 0.8);
+  position: relative;
+}
+
+.bouk-subtitle {
+  font-size: 16px;
+  color: #7b112c;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* Caja de login principal */
+.login-box-body {
+  background: rgba(5, 5, 5, 0.98);
+  padding: 35px 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(123, 17, 44, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Título BOUK dentro del login */
+.login-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login-title .bouk-text {
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.1);
+  margin-bottom: 5px;
+}
+
+.login-title .bouk-text .b-letter {
+  color: #7b112c;
+  text-shadow: 2px 2px 8px rgba(123, 17, 44, 0.5), 0 0 15px rgba(123, 17, 44, 0.8);
+}
+
+.login-title .subtitle {
+  font-size: 12px;
+  color: #7b112c;
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.login-box-msg {
+  color: #AAAAAA;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  position: relative;
+}
+
+/* Campos de formulario */
+.form-control.bouk-input {
+  background-color: rgba(8, 8, 8, 0.95) !important;
+  border: 2px solid #1a1a1a !important;
+  color: #FFFFFF !important;
+  border-radius: 10px !important;
+  height: 50px;
+  font-size: 15px;
+  padding: 14px 45px 14px 16px;
+  transition: all 0.4s ease;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.form-control.bouk-input:focus {
+  border-color: #7b112c !important;
+  box-shadow: 0 0 0 4px rgba(123, 17, 44, 0.25) !important;
+  background-color: rgba(18, 18, 18, 0.98) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+
+.form-control.bouk-input::placeholder {
+  color: #888 !important;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Iconos del formulario */
+.form-control-feedback.bouk-icon {
+  color: #7b112c;
+  right: 15px;
+  top: 15px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.has-feedback.bouk-field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.has-feedback.bouk-field:hover .form-control-feedback.bouk-icon {
+  color: #a01740;
+  transform: scale(1.1);
+}
+
+/* Botón de acceso */
+.btn-primary.bouk-btn {
+  background: linear-gradient(135deg, #7b112c 0%, #a01740 50%, #7b112c 100%) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 14px 25px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(123, 17, 44, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.btn-primary.bouk-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-primary.bouk-btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary.bouk-btn:hover {
+  background: linear-gradient(135deg, #8d1632 0%, #b31d4a 50%, #8d1632 100%) !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(123, 17, 44, 0.6), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body.bouk-login {
+    padding: 15px;
+  }
+  
+  .login-box {
+    width: 100%;
+    max-width: 340px;
+  }
+  
+  .login-box-body {
+    padding: 30px 25px;
+    border-radius: 12px;
+  }
+  
+  .bouk-title {
+    font-size: 36px;
+    letter-spacing: 3px;
+  }
+  
+  .bouk-subtitle {
+    font-size: 14px;
+  }
+  
+  .form-control.bouk-input {
+    height: 55px;
+    font-size: 15px;
+    padding: 15px 45px 15px 16px;
+  }
+  
+  .form-control-feedback.bouk-icon {
+    right: 15px;
+    top: 16px;
+    font-size: 18px;
+  }
+  
+  .btn-primary.bouk-btn {
+    height: 55px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+}

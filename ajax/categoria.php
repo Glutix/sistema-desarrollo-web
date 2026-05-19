@@ -1,50 +1,44 @@
-<?php
+<?php 
+require_once "../modelo/Categoria.php";
 
-require "./modelos/Categoria.php"
+$categoria=new Categoria();
 
-// creamos una instancia
-$categoria = new Categoria();
+$idcategoria=isset($_POST["idcategoria"])? limpiarCadena($_POST["idcategoria"]):"";
+$nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
+$descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
 
+switch ($_GET["op"]){
+	case 'guardaryeditar':
+		if (empty($idcategoria)){
+			$rspta=$categoria->insertar($nombre,$descripcion);
+			echo $rspta ? "Categoría registrada" : "Categoría no se pudo registrar";
+		}
+		else {
+			$rspta=$categoria->editar($idcategoria,$nombre,$descripcion);
+			echo $rspta ? "Categoría actualizada" : "Categoría no se pudo actualizar";
+		}
+	break;
 
-$idcategoria = isset($_POST["idcategoria"]) ? limpiarCadena($_POST["idcategoria"]) : "";
-$nombre = isset($_POST["nombre"]) ? limpiarCadena($_POST["nombre"]) : "";
-$descripcion = isset($_POST["descripcion"]) ? limpiarCadena($_POST["descripcion"]) : "";
+	case 'desactivar':
+		$rspta=$categoria->desactivar($idcategoria);
+ 		echo $rspta ? "Categoría Desactivada" : "Categoría no se puede desactivar";
+ 		break;
+	break;
 
-// vamos a utilizar una variable que viene de js llamada op
-switch ($_GET["op"]) {
-    case "guardaryeditar":
-        if(empty($idcategoria)){
-            $rpta = $categoria->insertar($nombre, $descripcion);
-            echo $rpta ? "Categoria registrada" : "Categoria no se pudo registrar";
-            break;
-        }
-        
-        $rpta = $categoria->editar($idcategoria, $nombre, $descripcion);
-        echo $rpta ? "Categoria actualizada" : "Categoria no se pudo actualizar";
+	case 'activar':
+		$rspta=$categoria->activar($idcategoria);
+ 		echo $rspta ? "Categoría activada" : "Categoría no se puede activar";
+ 		break;
+	break;
 
-        break;
-    
-    case "desactivar":
-        $rpta = $categoria->desactivar($idcategoria);
-        echo $rpta ? "Categoria desactivada" : "Categoria no se pudo desactivar";
+	case 'mostrar':
+		$rspta=$categoria->mostrar($idcategoria);
+ 		//Codificar el resultado utilizando json
+ 		echo json_encode($rspta);
+ 		break;
+	break;
 
-        break;
-    
-    case "activar":
-        $rpta = $categoria->activar($idcategoria);
-        echo $rpta ? "Categoria activada" : "Categoria no se pudo activar";
-
-        break;
-
-    case "mostrar":
-        $rpta = $categoria->mostrar($idcategoria);
-        // Mostrar resultado en JSON
-
-        echo json_encode($rpta);
-
-        break;
-
-    case 'listar':
+	case 'listar':
 		$rspta=$categoria->listar();
  		//Vamos a declarar un array
  		$data= Array();
@@ -69,7 +63,5 @@ switch ($_GET["op"]) {
  		echo json_encode($results);
 
 	break;
-
 }
-
 ?>
