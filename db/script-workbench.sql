@@ -19,14 +19,14 @@ CREATE SCHEMA IF NOT EXISTS `dbsistema` ;
 USE `dbsistema` ;
 
 -- -----------------------------------------------------
--- Table `dbsistema`.`cateogria`
+-- Table `dbsistema`.`categoria`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `dbsistema`.`cateogria` (
-  `idcateogria` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `dbsistema`.`categoria` (
+  `idcategoria` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(50) NULL,
   `descripcion` VARCHAR(256) NULL,
   `condicion` TINYINT NOT NULL DEFAULT 1,
-  PRIMARY KEY (`idcateogria`),
+  PRIMARY KEY (`idcategoria`),
   UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC) )
 ENGINE = InnoDB;
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `dbsistema`.`articulo` (
   INDEX `idcategoria_idx` (`idcategoria` ASC),
   CONSTRAINT `fk_articulo_categoria`
     FOREIGN KEY (`idcategoria`)
-    REFERENCES `dbsistema`.`cateogria` (`idcateogria`)
+    REFERENCES `dbsistema`.`categoria` (`idcategoria`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
