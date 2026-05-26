@@ -1,19 +1,17 @@
-<?php 
+<?php
 require_once "global.php";
 
-$conexion = new mysqli(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
+$conexion = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
 
-mysqli_query( $conexion, 'SET NAMES "'.DB_ENCODE.'"');
+mysqli_query($conexion, 'SET NAMES "' . DB_ENCODE . '"');
 
 //Si tenemos un posible error en la conexión lo mostramos
-if (mysqli_connect_errno())
-{
-	printf("Falló conexión a la base de datos: %s\n",mysqli_connect_error());
+if (mysqli_connect_errno()) {
+	printf("Falló conexión a la base de datos: %s\n", mysqli_connect_error());
 	exit();
 }
 
-if (!function_exists('ejecutarConsulta'))
-{
+if (!function_exists('ejecutarConsulta')) {
 	function ejecutarConsulta($sql)
 	{
 		global $conexion;
@@ -36,9 +34,7 @@ if (!function_exists('ejecutarConsulta'))
 	function limpiarCadena($str)
 	{
 		global $conexion;
-		$str = mysqli_real_escape_string($conexion,trim($str));
-		return htmlspecialchars($str);
+		$str = mysqli_real_escape_string($conexion, trim($str));
+		return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
 	}
 }
-?>
-
