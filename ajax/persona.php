@@ -1,38 +1,40 @@
 <?php 
-require_once "../modelos/Categoria.php";
+require_once "../modelos/Persona.php";
 
-$categoria=new Categoria();
+$persona=new Persona();
 
-$idcategoria=isset($_POST["idcategoria"])? limpiarCadena($_POST["idcategoria"]):"";
+// $tipo_persona, $nombre, $tipo_documento, $num_documento, $direccion, $telefono, $email
+
+$idpersona=isset($_POST["idpersona"])? limpiarCadena($_POST["idpersona"]):"";
+$tipo_persona=isset($_POST["tipo_persona"]) ? limpiarCadena($_POST["tipo_persona"]) : "";
 $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
-$descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
+$tipo_documento=isset($_POST["tipo_documento"])? limpiarCadena($_POST["tipo_documento"]):"";
+$num_documento=isset($_POST["num_documento"]) ? limpiarCadena($_POST["num_documento"]) : "";
+$direccion=isset($_POST["direccion"]) ? limpiarCadena($_POST["direccion"]) : "";
+$telefono=isset($_POST["telefono"]) ? limpiarCadena($_POST["telefono"]) : "";
+$email=isset($_POST["email"]) ? limpiarCadena($_POST["email"]) : "";
 
 switch ($_GET["op"]){
 	case 'guardaryeditar':
-		if (empty($idcategoria)){
-			$rspta=$categoria->insertar($nombre,$descripcion);
-			echo $rspta ? "Categoría registrada" : "Categoría no se pudo registrar";
+		if (empty($idpersona)){
+			$rspta=$persona->insertar($tipo_persona, $nombre, $tipo_documento, $num_documento, $direccion, $telefono, $email);
+			echo $rspta ? "Persona registrada" : "Persona no se pudo registrar";
 		}
 		else {
-			$rspta=$categoria->editar($idcategoria,$nombre,$descripcion);
-			echo $rspta ? "Categoría actualizada" : "Categoría no se pudo actualizar";
+			$rspta=$persona->editar($idpersona, $tipo_persona, $nombre, $tipo_documento, $num_documento, $direccion, $telefono, $email);
+			echo $rspta ? "Persona actualizada" : "Persona no se pudo actualizar";
 		}
 	break;
 
-	case 'desactivar':
-		$rspta=$categoria->desactivar($idcategoria);
- 		echo $rspta ? "Categoría Desactivada" : "Categoría no se puede desactivar";
+	case 'eliminar':
+		$rspta=$persona->eliminar($idpersona);
+ 		echo $rspta ? "Persona eliminada" : "Persona no se puede eliminar";
  		break;
 	break;
 
-	case 'activar':
-		$rspta=$categoria->activar($idcategoria);
- 		echo $rspta ? "Categoría activada" : "Categoría no se puede activar";
- 		break;
-	break;
 
 	case 'mostrar':
-		$rspta=$categoria->mostrar($idcategoria);
+		$rspta=$persona->mostrar($idpersona);
  		//Codificar el resultado utilizando json
  		echo json_encode($rspta);
  		break;
