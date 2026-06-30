@@ -1,6 +1,6 @@
 <?php
 //Incluímos inicialmente la conexión a la base de datos
-require "../config/Conexion.php";
+require_once "../config/conexion.php";
 
 class Articulo
 {
@@ -8,17 +8,17 @@ class Articulo
 	public function __construct() {}
 
 	//Implementamos un método para insertar registros
-	public function insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen)
+	public function insertar($idcategoria, $idmarca, $codigo, $nombre, $stock, $descripcion, $imagen)
 	{
-		$sql = "INSERT INTO articulo (idcategoria,codigo,nombre,stock,descripcion,imagen,condicion)
-		VALUES ('$idcategoria','$codigo','$nombre','$stock','$descripcion','$imagen','1')";
+		$sql = "INSERT INTO articulo (idcategoria,idmarca,codigo,nombre,stock,descripcion,imagen,condicion)
+		VALUES ('$idcategoria','$idmarca','$codigo','$nombre','$stock','$descripcion','$imagen','1')";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idarticulo, $idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen)
+	public function editar($idarticulo, $idcategoria, $idmarca, $codigo, $nombre, $stock, $descripcion, $imagen)
 	{
-		$sql = "UPDATE articulo SET idcategoria='$idcategoria',codigo='$codigo',nombre='$nombre',stock='$stock',descripcion='$descripcion',imagen='$imagen' WHERE idarticulo='$idarticulo'";
+		$sql = "UPDATE articulo SET idcategoria='$idcategoria',idmarca='$idmarca',codigo='$codigo',nombre='$nombre',stock='$stock',descripcion='$descripcion',imagen='$imagen' WHERE idarticulo='$idarticulo'";
 		return ejecutarConsulta($sql);
 	}
 
@@ -46,7 +46,21 @@ class Articulo
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql = "SELECT a.idarticulo,a.idcategoria,c.nombre as categoria,a.codigo,a.nombre,a.stock,a.descripcion,a.imagen,a.condicion FROM articulo a INNER JOIN categoria c ON a.idcategoria=c.idcategoria";
+		$sql = "SELECT a.idarticulo,a.idcategoria,c.nombre as categoria,a.idmarca,m.nombre as marca,a.codigo,a.nombre,a.stock,a.descripcion,a.imagen,a.condicion FROM articulo a 
+		INNER JOIN categoria c ON a.idcategoria=c.idcategoria 
+		INNER JOIN marca m ON a.idmarca=m.idmarca";
+		return ejecutarConsulta($sql);
+	}
+
+	public function listarCategoria()
+	{
+		$sql = "SELECT * FROM categoria WHERE condicion = '1'";
+		return ejecutarConsulta($sql);
+	}
+
+	public function listarMarca()
+	{
+		$sql = "SELECT * FROM marca WHERE condicion = '1'";
 		return ejecutarConsulta($sql);
 	}
 }

@@ -30,6 +30,18 @@ CREATE TABLE IF NOT EXISTS `dbsistema`.`categoria` (
   UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC) )
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `dbsistema`.`marca`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbsistema`.`marca` (
+  `idmarca` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(50) NOT NULL,
+  `descripcion` VARCHAR(256) NULL,
+  `condicion` TINYINT NULL DEFAULT 1,
+  PRIMARY KEY (`idmarca`),
+  UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC))
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `dbsistema`.`persona`
@@ -53,6 +65,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `dbsistema`.`articulo` (
   `idarticulo` INT NOT NULL AUTO_INCREMENT,
   `idcategoria` INT NOT NULL,
+  `idmarca` INT NOT NULL,
   `codigo` VARCHAR(50) NULL,
   `nombre` VARCHAR(100) NOT NULL,
   `stock` INT NOT NULL,
@@ -60,13 +73,17 @@ CREATE TABLE IF NOT EXISTS `dbsistema`.`articulo` (
   `imagen` VARCHAR(50) NULL,
   `condicion` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`idarticulo`),
-  UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC),
-  INDEX `idcategoria_idx` (`idcategoria` ASC),
+  UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC) ,
+  INDEX `idcategoria_idx` (`idcategoria` ASC)  ,
   CONSTRAINT `fk_articulo_categoria`
     FOREIGN KEY (`idcategoria`)
-    REFERENCES `dbsistema`.`categoria` (`idcategoria`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
+    REFERENCES `dbsistema`.`categoria` (`idcategoria`),
+  INDEX `idmarca_idx` (`idmarca` ASC)  ,
+  CONSTRAINT `fk_articulo_marca`
+    FOREIGN KEY (`idmarca`)
+    REFERENCES `dbsistema`.`marca` (`idmarca`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 

@@ -1,10 +1,10 @@
 <?php
 require_once "../modelos/Articulo.php";
-
 $articulo = new Articulo();
 
 $idarticulo = isset($_POST["idarticulo"]) ? limpiarCadena($_POST["idarticulo"]) : "";
 $idcategoria = isset($_POST["idcategoria"]) ? limpiarCadena($_POST["idcategoria"]) : "";
+$idmarca = isset($_POST["idmarca"]) ? limpiarCadena($_POST["idmarca"]) : "";
 $codigo = isset($_POST["codigo"]) ? limpiarCadena($_POST["codigo"]) : "";
 $nombre = isset($_POST["nombre"]) ? limpiarCadena($_POST["nombre"]) : "";
 $stock = isset($_POST["stock"]) ? limpiarCadena($_POST["stock"]) : "";
@@ -24,10 +24,10 @@ switch ($_GET["op"]) {
 			}
 		}
 		if (empty($idarticulo)) {
-			$rspta = $articulo->insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen);
+			$rspta = $articulo->insertar($idcategoria, $idmarca, $codigo, $nombre, $stock, $descripcion, $imagen);
 			echo $rspta ? "Artículo registrado" : "Artículo no se pudo registrar";
 		} else {
-			$rspta = $articulo->editar($idarticulo, $idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen);
+			$rspta = $articulo->editar($idarticulo, $idcategoria, $idmarca, $codigo, $nombre, $stock, $descripcion, $imagen);
 			echo $rspta ? "Artículo actualizado" : "Artículo no se pudo actualizar";
 		}
 		break;
@@ -64,10 +64,11 @@ switch ($_GET["op"]) {
 					' <button class="btn btn-primary" onclick="activar(' . $reg->idarticulo . ')"><i class="fa fa-check"></i></button>',
 				"1" => $reg->nombre,
 				"2" => $reg->categoria,
-				"3" => $reg->codigo,
-				"4" => $reg->stock,
-				"5" => "<img src='../files/articulos/" . $reg->imagen . "' height='50px' width='50px' >",
-				"6" => ($reg->condicion) ? '<span class="label bg-green">Activado</span>' :
+				"3" => $reg->marca,
+				"4" => $reg->codigo,
+				"5" => $reg->stock,
+				"6" => "<img src='../files/articulo/" . mb_strtolower($reg->categoria) . $reg->imagen . "' height='50px' width='50px' >",
+				"7" => ($reg->condicion) ? '<span class="label bg-green">Activado</span>' :
 					'<span class="label bg-red">Desactivado</span>'
 			);
 		}
@@ -82,13 +83,20 @@ switch ($_GET["op"]) {
 		break;
 
 	case "selectCategoria":
-		require_once "../modelos/Categoria.php";
-		$categoria = new Categoria();
 
-		$rspta = $categoria->listar();
+		$rspta = $articulo->listarCategoria();
 
 		while ($reg = $rspta->fetch_object()) {
 			echo '<option value=' . $reg->idcategoria . '>' . $reg->nombre . '</option>';
+		}
+		break;
+
+	case "selectMarca":
+
+		$rspta = $articulo->listarMarca();
+
+		while ($reg = $rspta->fetch_object()) {
+			echo '<option value=' . $reg->idmarca . '>' . $reg->nombre . '</option>';
 		}
 		break;
 }

@@ -22,6 +22,7 @@ require 'header.php';
                 <th>Opciones</th>
                 <th>Nombre</th>
                 <th>Categoría</th>
+                <th>Marca</th>
                 <th>Código</th>
                 <th>Stock</th>
                 <th>Imagen</th>
@@ -33,6 +34,7 @@ require 'header.php';
                 <th>Opciones</th>
                 <th>Nombre</th>
                 <th>Categoría</th>
+                <th>Marca</th>
                 <th>Código</th>
                 <th>Stock</th>
                 <th>Imagen</th>
@@ -50,6 +52,11 @@ require 'header.php';
               <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <label>Categoría(*):</label>
                 <select id="idcategoria" name="idcategoria" class="form-control selectpicker" data-live-search="true" required></select>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Marca:</label>
+                <select name="idmarca" id="idmarca" class="form-control" required>
+                </select>
               </div>
               <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <label>Stock(*):</label>
@@ -92,6 +99,6 @@ require 'header.php';
 <?php
 require 'footer.php';
 ?>
+<script type="text/javascript" src="scripts/articulo.js"></script>
 <script type="text/javascript" src="../public/js/JsBarcode.all.min.js"></script>
 <script type="text/javascript" src="../public/js/jquery.PrintArea.js"></script>
-<script type="text/javascript" src="scripts/articulo.js"></script>

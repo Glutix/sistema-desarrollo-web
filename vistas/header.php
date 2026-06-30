@@ -13,8 +13,7 @@
   <link rel="stylesheet" href="../public/css/font-awesome.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../public/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
+  <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../public/css/_all-skins.min.css">
   <link rel="apple-touch-icon" href="../public/img/apple-touch-icon.png">
   <link rel="shortcut icon" href="../public/img/favicon.ico">
@@ -105,6 +104,8 @@
             <ul class="treeview-menu">
               <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Artículos</a></li>
               <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
+              <li><a href="marca.php"><i class="fa fa-circle-o"></i> Marca</a></li>
+
             </ul>
           </li>
 
